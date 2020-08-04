@@ -1,17 +1,15 @@
-var express = require('express');
-var todoController = require('./controllers/todocontroller')
-var app = express();
+const path = require("path");
+const express = require("express");
+const app = express();
+app.use(express.static(__dirname + '/angular-build'));
+app.get('/*', function(req, res) { res.sendFile(path.join(__dirname, 'angular-build', 'index.html')) }); // Start the app by listening on the default Heroku port app.listen(process.env.PORT || 8080);
 
-// set up template engine
-app.set('view engine', 'ejs');
-
-//static files
-app.use(express.static('./public'));
-
-//fire controllers
-todoController(app);
-
-//Listen to the port
-app.listen(process.env.PORT || 3000, function() {
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+const path = require("path");
+const express = require("express");
+const app = express();
+app.use(express.static(__dirname + '/angular-build'));
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'angular-build', 'index.html'))
 });
+// Start the app by listening on the default Heroku port
+app.listen(process.env.PORT || 8080);
