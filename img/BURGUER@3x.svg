@@ -1,0 +1,13 @@
+<svg id="BURGUER" xmlns="http://www.w3.org/2000/svg" width="67.5" height="29.813" viewBox="0 0 22.5 9.938">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4a71b1;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Rectángulo_2" data-name="Rectángulo 2" class="cls-1" d="M279.542,16.031h22.489v1.938H279.542V16.031Z" transform="translate(-279.531 -16.031)"/>
+  <path id="Rectángulo_2_copia" data-name="Rectángulo 2 copia" class="cls-1" d="M279.542,20.031h22.489v1.938H279.542V20.031Z" transform="translate(-279.531 -16.031)"/>
+  <path id="Rectángulo_2_copia_2" data-name="Rectángulo 2 copia 2" class="cls-1" d="M279.542,24.031h22.489v1.938H279.542V24.031Z" transform="translate(-279.531 -16.031)"/>
+</svg>

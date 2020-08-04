@@ -1,0 +1,396 @@
+$color_base: #4a71b1;
+$color_secundario: #aaacaf;
+$color_contraste: #ee381a;
+$color_titulos :rgba(0, 0, 0, .85);
+$color_bajada: rgba(0, 0, 0, .65);
+$medida_base: 8px;
+* {
+    font-family: 'Lato', sans-serif;
+    text-rendering: optimizeLegibility;
+    transition: all 1s ease;
+}
+
+body {
+    background-image: url(/img/fondo_app@3x.png);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: ffffff;
+}
+
+header#cabecera {
+    border-top: 6.13px solid $color_base;
+    width: 100%;
+    padding: $medida_base $medida_base*2;
+    .burguer {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        &:focus {
+            outline: 0;
+        }
+        #rectangulo_1 {
+            transform: translate(-279.531px, -16.031px);
+        }
+        #rectangulo_2 {
+            transform: translate(-279.531px, -16.031px, );
+        }
+        #rectangulo_3 {
+            transform: translate(-279.531px, -16.031px, );
+        }
+        &.activo {
+            #rectangulo_1 {
+                transform: translate(-182.531px, -212.031px) rotate(45deg);
+            }
+            #rectangulo_2 {
+                transform: translate(-211.531px, 197.969px) rotate(-45deg);
+            }
+            #rectangulo_3 {
+                display: none;
+            }
+        }
+    }
+    .acerca-de {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: $medida_base;
+        ul {
+            font-size: .75rem;
+            font-weight: 300;
+            background-color: white;
+            list-style: none;
+            padding: $medida_base;
+            margin-bottom: 0;
+            position: absolute;
+            width: 75px;
+            border-radius: 5px;
+            right: 0px;
+            -webkit-box-shadow: 1px 4px 15px -2px rgba(0, 0, 0, 0.12);
+            -moz-box-shadow: 1px 4px 15px -2px rgba(0, 0, 0, 0.12);
+            box-shadow: 1px 4px 15px -2px rgba(0, 0, 0, 0.12);
+            transition: all 1s ease-in;
+            &.menu-cerrado {
+                margin-right: -100%;
+            }
+            li {
+                display: grid;
+                padding-bottom: $medida_base/2;
+                a {
+                    color: gray;
+                    text-decoration: none;
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media screen and (max-width: 680px) {
+            max-height: 200px;
+        }
+        svg {
+            max-width: 33%;
+            @media screen and (min-width: 1024px) {
+                max-width: 200px;
+                ;
+            }
+        }
+    }
+}
+
+main {
+    max-width: 1024px;
+    margin: auto;
+    padding: $medida_base*2;
+    h1 {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: $color_titulos;
+        padding-top: $medida_base*2;
+        @media screen and (min-width: 1024px) {
+            font-size: 2.5rem;
+        }
+    }
+    p {
+        color: $color_bajada;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.2rem;
+        @media screen and (min-width: 1024px) {
+            font-size: 1.5rem;
+            line-height: 2.2rem;
+        }
+    }
+    .form-paso_1 {
+        padding: $medida_base*5 $medida_base*4;
+        form {
+            input#direccion {
+                background-image: url(/img/teclado.png);
+                background-position: 95% center;
+                background-repeat: no-repeat;
+                &:focus {
+                    background-image: none;
+                    text-indent: 0px
+                }
+            }
+        }
+        .botones {
+            margin-top: $medida_base*2;
+        }
+    }
+    .paso_2 {
+        form {
+            @media screen and (min-width: 1024px) {
+                margin: 0 $medida_base*15;
+            }
+            padding-top: 0px;
+            label {
+                margin-top: $medida_base*2;
+            }
+        }
+    }
+    label {
+        width: 100%;
+        color: $color_secundario;
+        text-align: center;
+        font-size: .75rem;
+        @media screen and (min-width: 1024px) {
+            font-size: 1.5rem;
+        }
+    }
+    input {
+        width: 100%;
+        border: 1px solid $color_secundario;
+        border-radius: 5px;
+        text-align: center;
+        @media screen and (min-width: 1024px) {
+            min-height: 50px;
+        }
+        &::placeholder {
+            color: $color_secundario;
+            font-size: .75rem;
+            text-align: center;
+            line-height: .85rem;
+            @media screen and (min-width: 1024px) {
+                font-size: 1rem;
+                line-height: 1.2rem;
+            }
+        }
+    }
+    select {
+        width: 49%;
+        @media screen and (min-width: 479px) {
+            margin-left: .6%;
+        }
+        border: 1px solid $color_secundario;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: $medida_base*2;
+        color: $color_secundario;
+        font-size: .75rem;
+        text-align: center;
+        line-height: .85rem;
+        height: $medida_base*4;
+        @media screen and (min-width: 1024px) {
+            font-size: 1rem;
+        }
+        option[value=""][disabled] {
+            color: $color_secundario;
+            text-align: center;
+        }
+    }
+    button.boton-base,
+    a.boton-base {
+        background-color: $color_contraste;
+        color: white !important;
+        font-size: .85rem;
+        border-radius: 5px;
+        border: 0;
+        padding: $medida_base;
+        text-decoration: none;
+        @media screen and (min-width: 1024px) {
+            font-size: 1.2rem;
+            margin-top: $medida_base*2;
+        }
+        &:hover {
+            opacity: .85;
+        }
+    }
+    button.boton-blanco,
+    a.boton-blanco {
+        background-color: ffffff;
+        color: $color_bajada;
+        font-size: .85rem;
+        border-radius: 5px;
+        border: 1px solid $color_bajada;
+        padding: $medida_base 16px;
+        text-decoration: none;
+        @media screen and (min-width: 1024px) {
+            font-size: 1.2rem;
+            margin-top: $medida_base*2;
+        }
+        &:hover {
+            opacity: .85;
+        }
+    }
+    .bloque-resultados {
+        margin-top: $medida_base*5;
+        h2 {
+            font-size: 1.45rem;
+            color: $color_titulos;
+            font-weight: 900;
+            span {
+                font-size: 1.4rem;
+                color: $color_bajada;
+                font-weight: 900;
+            }
+            @media screen and (min-width: 1024px) {
+                margin-top: $medida_base*5;
+                text-align: center;
+            }
+        }
+        .botones {
+            margin-top: $medida_base*3;
+            @media screen and (min-width: 1024px) {
+                margin-top: $medida_base*5;
+            }
+        }
+        @media screen and (min-width: 1024px) {
+            max-width: 50%;
+            margin: auto;
+        }
+        .imagen {
+            @media screen and (min-width: 1024px) {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            color: $color_bajada;
+            font-weight: 400;
+            span {
+                font-weight: 900;
+                font-size: 1.05rem;
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: $medida_base*2 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    small {
+        font-size: .8rem;
+        @media screen and (min-width: 1024px) {
+            font-size: 1rem;
+        }
+    }
+}
+
+.range {
+    display: table;
+    position: relative;
+    height: 25px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.range input[type="range"] {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -ms-appearance: none !important;
+    -o-appearance: none !important;
+    appearance: none !important;
+    display: table-cell;
+    width: 100%;
+    background-color: transparent;
+    height: 25px;
+    cursor: pointer;
+    @media screen and (min-width: 1024px) {
+        max-height: 25px !important;
+        min-height: 25px;
+    }
+}
+
+.range input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -ms-appearance: none !important;
+    -o-appearance: none !important;
+    appearance: none !important;
+    width: 11px;
+    height: 25px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0px;
+    background-color: $color_base;
+}
+
+.range input[type="range"]::-moz-slider-thumb {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    -ms-appearance: none !important;
+    -o-appearance: none !important;
+    appearance: none !important;
+    width: 11px;
+    height: 25px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0px;
+    background-color: $color_base;
+}
+
+.range output {
+    display: table-cell;
+    padding: 3px 5px 2px;
+    min-width: 40px;
+    color: rgb(255, 255, 255);
+    background-color: $color_base;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+    font-size: .75rem;
+}
+
+.range input[type="range"] {
+    outline: none;
+    border-radius: 5px 0px 0px 5px;
+}
