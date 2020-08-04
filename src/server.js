@@ -1,18 +1,17 @@
-const express = require('express');
-const path = require('path');
+var express = require('express');
+var todoController = require('./controllers/todocontroller')
+var app = express();
 
-const app = express();
+// set up template engine
+app.set('view engine', 'ejs');
 
-app.use(express.static(__dirname + '/dist/cuanto-vale'));
+//static files
+app.use(express.static('./public'));
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/dist/cuanto-vale/index.html'));
-    res.redirect(path.join(__dirname + '/dist/cuanto-vale/index.html'));
+//fire controllers
+todoController(app);
+
+//Listen to the port
+app.listen(process.env.PORT || 3000, function() {
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
-
-
-// app.get('/', function(req, res) {
-//     res.redirect('/todo');
-// });
-
-app.listen(process.env.PORT || 8080);
