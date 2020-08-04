@@ -1,0 +1,53 @@
+<h1>
+    ¿Qué tiene?
+</h1>
+<p>Solo nos faltan unos detalles y<br> verás la información que buscas</p>
+
+<div class="w-100 form-paso_1 paso_2">
+    <form action=" # ">
+        <label for="direccion ">¿Cuántos m2 tiene en total?</label>
+
+        <div class="range">
+            <input type="range" name="range" min="31" max="385 " value="31" onchange="rango(this)">
+            <output>31</output>
+        </div>
+
+        <label for="direccion">¿Cuántos m2 utilizables?</label>
+
+        <div class="range">
+            <input type="range" name="range " min="31" max="214" value="31" onchange="rango(this) ">
+            <output>31</output>
+        </div>
+
+
+        <select name="habitaciones " id="habitaciones ">
+                <option  value=" " disabled selected class="select-holder ">Habitaciones</option>
+               <option value="1 ">1</option>
+               <option value="2 ">2</option>
+               <option value="3 ">3</option>
+               <option value="4 ">4</option>
+               <option value="5 ">5</option>
+               <option value="6 ">6</option>
+            </select>
+        <select name="bannos " id="bannos ">
+                <option value=" " disabled selected class="select-holder ">Baños</option>
+                <option value="1 ">1</option>
+                <option value="2 ">2</option>
+                <option value="3 ">3</option>
+                <option value="4 ">4</option>
+                <option value="5 ">5</option>
+ 
+               
+            </select>
+        <div class="botones w-100 d-flex justify-content-center ">
+            <button [routerLink]="['/resultados']" class="boton-base">
+                    Continuar ›
+                </button>
+        </div>
+        <div class="botones w-100 d-flex justify-content-center ">
+            <button [routerLink]="['home']" class="boton-blanco">
+                    volver ›
+                </button>
+        </div>
+    </form>
+</div>

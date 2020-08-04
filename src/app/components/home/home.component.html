@@ -1,0 +1,30 @@
+<h1>
+    ¿Qué buscas?
+</h1>
+<p>Encuentra el valor de cientos de<br> propiedades en un par de clicks</p>
+
+<div class="w-100 form-paso_1">
+    <form action="#">
+        <label for="direccion">¿Qué dirección buscas?</label>
+        <input id="direccion" type="text" placeholder="Ingresa una dirección " onchange="">
+        <select name="casa_depto" id="casa_depto">
+                <option  value="" disabled selected class="select-holder">Casa o depto</option>
+                <option value="casa">Casa</option>
+                <option value="Departamento">Depto</option>
+            </select>
+        <select name="casa_depto" id="casa_depto">
+                <option value="" disabled selected class="select-holder">Comuna</option>
+                <option value="vitacura">vitacura</option>
+                <option value="providencia">Providencia</option>
+                <option value="las condes">Las condes</option>
+                <option value="nunoa">Ñunoa</option>
+                <option value="la reina">La reina</option>
+                <option value="lo barnechea">Lo barnechea</option>
+            </select>
+        <div class="botones w-100 d-flex justify-content-center">
+            <button [routerLink]="[ '/detalles']" class="boton-base">
+                    Continuar ›
+            </button>
+        </div>
+    </form>
+</div>
